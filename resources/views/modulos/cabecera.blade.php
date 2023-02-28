@@ -36,6 +36,17 @@
         <p>
           {{auth()->user()->name}} - {{auth()->user()->rol}}
         </p>
+
+        <li class="user-body">
+          <a href="{{ route('MiPerfil') }}" class="dropdown-item">Perfil</a>
+          <div class="dropdown-divider"></div>
+        </li>
+
+        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="dropdown-item">Salir</a>
+
+        <form method="post" id="logout-form" action="{{ route('logout') }}">
+          @csrf
+        </form>
       </li>
     </ul>
   </li>

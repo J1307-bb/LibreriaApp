@@ -22,6 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('Inicio', [InicioController::class, 'index']);
+Route::get('/MiPerfil', [App\Http\Controllers\UsuariosController::class,'MiPerfil'])->name('MiPerfil');
 
 Auth::routes();
 
