@@ -25,9 +25,12 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote --> 
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <!-- datatable bootstrap -->
+  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <!-- datatable bootstrap responsive -->
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-
 
 @if(Auth::user())
   <!--/wrapper-->
@@ -87,5 +90,37 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+
+<!-- dataTables scripts -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<!-- dataTables responsive scripts -->
+<script src="plugins/datatables-responsive/js/responsive.bootstrap.min.js"></script>
+<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+
+<script type="text/javascript">
+  $(".dtUsers").DataTable({
+    "language": {
+
+      "sSearch": "Buscar:",
+      "sEmptyTable": "No hay datos en la Tabla",
+      "sZeroRecords": "No se encontraron resultados",
+      "sInfo": "Mostrando registros del START al END de un total TOTAL",
+      "SInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0",
+      "sInfoFiltered": "(filtrando de un total de MAX registros)",
+      "oPaginate": {
+
+        "sFirst": "Primero",
+        "sLast": "Último",
+        "sNext": "Siguiente",
+        "sPrevious": "Anterior"
+
+        },
+        "sLoadingRecords": "Cargando...",
+        "sLengthMenu": "Mostrar MENU registros"
+      }
+});
+
+</script>
 </body>
 </html>

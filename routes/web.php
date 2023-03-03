@@ -24,6 +24,10 @@ Auth::routes();
 Route::get('Inicio', [InicioController::class, 'index']);
 Route::get('/MiPerfil', [App\Http\Controllers\UsuariosController::class,'MiPerfil'])->name('MiPerfil');
 
+Route::put('/MiPerfil', [App\Http\Controllers\UsuariosController::class,'MiPerfilUpdate'])->name('MiPerfilUpdate');
+
+Route::get('/Usuarios',[App\Http\Controllers\UsuariosController::class,'index'])->name('index');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
