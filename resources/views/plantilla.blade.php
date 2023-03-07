@@ -98,6 +98,9 @@
 <script src="plugins/datatables-responsive/js/responsive.bootstrap.min.js"></script>
 <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 
+<!-- SweetAlert2 Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11""></script>
+
 <script type="text/javascript">
   $(".dtUsers").DataTable({
     "language": {
@@ -122,5 +125,15 @@
 });
 
 </script>
+@if (session('UsuarioCreado')=='OK')
+  <script type="text/javascript">
+    Swal.fire(
+      'El usuario ha sido creado',
+      '',
+      'success'
+    );
+  </script>
+@endif
+
 </body>
 </html>

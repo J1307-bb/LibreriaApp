@@ -113,9 +113,30 @@ public function MiPerfilUpdate(Request $request)
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //Funcion que usaremos para crear un nuevo usuario
     public function store(Request $request)
     {
-        //
+        //Validar los datos recibidos
+        $datos = request()->validate([
+            'name' => ['string', 'max:255'],
+            'rol' => ['required'],
+            'email' => ['string', 'unique:users'],
+            'password' => ['string', 'min:3']
+        ]);
+
+        //Crear el registro en la tabla users de la base de datos
+        Usuarios::create([
+            'name' => $datos['name'],
+            'email' => $datos['email'],
+            'rol' => $datos['rol'],
+            'password' => Hash::make($datos['password']),
+            'documento' => '',
+            'foto' => ''
+        ]);
+
+        //Redireccionamos a la vista de usuarios, al llamar a la ruta Usuarios,
+        //enviamos una variable que indique que el usuario ha sido creado
+        return redirect('Usuarios')->with('UsuarioCreado','OK');
     }
 
     /**

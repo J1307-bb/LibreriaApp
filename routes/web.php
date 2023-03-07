@@ -28,6 +28,8 @@ Route::put('/MiPerfil', [App\Http\Controllers\UsuariosController::class,'MiPerfi
 
 Route::get('/Usuarios',[App\Http\Controllers\UsuariosController::class,'index'])->name('index');
 
+Route::post('/Usuarios',[App\Http\Controllers\UsuariosController::class,'store'])->name('store');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
