@@ -21,7 +21,7 @@
     @if(auth()->user()->foto == "")
       <img src="{{ url('storage/defecto.jpg') }}" class="user-image" alt="User Image">
     @else
-      <img src="{{ url('storsge/.auth()->user()->foto') }}" class="user-image" alt="User Image">
+      <img src="{{ url('storage/'.auth()->user()->foto) }}" class="user-image" alt="User Image">
     @endif
     </a>
     <ul class="dropdown-menu">
@@ -30,7 +30,7 @@
         @if(auth()->user()->foto == "")
           <img src="{{ url('storage/defecto.jpg') }}" class="image-circle" alt="User Image">
         @else
-          <img src="{{ url('storsge/.auth()->user()->foto') }}" class="image-circle" alt="User Image">
+          <img src="{{ url('storage/'.auth()->user()->foto) }}" class="image-circle" alt="User Image">
         @endif
 
         <p>
